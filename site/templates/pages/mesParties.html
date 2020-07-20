@@ -1,0 +1,29 @@
+
+{%extends 'layouts/default.html'%}
+
+{% block body %}
+<h1>MES PARTIES</h1>
+
+<section>
+		<table>
+		<tr>
+		<th class="haut">Pseudo</th>
+        <th class="haut">id Partie</th>
+        <th class="haut">Gagné</th>
+        <th class="haut">Score</th>
+        <th class="haut">Niveau Difficulté</th>
+        <th class="haut">Rejouer la partie</th>
+		</tr>
+{{ content }}
+        </table>
+</section>
+<script>
+    $(".btnRejouer").click(function(){
+        let placeidp=String("."+"l"+$($(this).parent()).attr("l")+"c1")
+        boite=$(placeidp)
+        idp=jQuery(boite).text()
+        window.location.replace("http://127.0.0.1:5000/mesparties/rejouerpartie?idp="+idp+"&pseudo="+$(".identifiant").attr("pseudo"))
+    })
+</script>
+
+{% endblock %}

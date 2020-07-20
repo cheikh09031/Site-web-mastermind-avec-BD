@@ -1,0 +1,17 @@
+<nav>
+    <script>
+        $(document).ready(function(){
+            $('a[href^="http://"]').each(function(){ 
+                var oldUrl = $(this).attr("href"); // Get current url
+                var newUrl = oldUrl.replace(oldUrl, String(oldUrl+$(".identifiant").attr("pseudo"))); // Create new url
+                $(this).attr("href", newUrl); // Set herf value
+            });
+        });
+    </script>
+    <ul class="identifiant" pseudo={{ pseudo }}>
+        <li><a href="http://127.0.0.1:5000/jeu?pseudo=">Jeu</a></li>
+        <li><a href="http://127.0.0.1:5000/mesparties?pseudo=">Mes parties</a></li>
+        <li><a href="http://127.0.0.1:5000/classementcomplet?pseudo=">Classement Complet</a></li>
+        <li><a href="http://127.0.0.1:5000/classementjour?pseudo=">Classement du Jour</a></li>
+    </ul>
+</nav>

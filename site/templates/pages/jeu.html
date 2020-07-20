@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang='fr'>
+    <head>
+        <meta charset="UTF-8">
+        <title>Mastermind</title>
+        <link rel="stylesheet" href="/static/fdsss.css">
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+
+    </head>
+    <body>
+        {% include 'partials/_nav.html' %}
+        <div class="niveaux" niveauMaxpermi={{ nivmax }} nivchoisi="-1">
+            <div class="messageNiveau flexer">  
+                <div class="textmessniv">
+                    <h2>VEUILLEZ CHOISIR LE NIVEAU</h2>
+                </div>
+            </div>
+            <div class="choixNiv flexer">
+                <div class="niveau" idniv="1">
+                    <div class="textNiv">
+                        <h2>1</h2>
+                    </div>
+                </div>
+                <div class="niveau" idniv="2">
+                    <div class="textNiv">
+                        <h2>2</h2>
+                    </div>
+                </div>
+                <div class="niveau" idniv="3">
+                    <div class="textNiv">
+                        <h2>3</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="fin">
+            <div class="messageFin flexer">
+                <div class="textfin">
+                    <h2 class="defaite">VOUS AVEZ PERDU!!!</h2>
+                    <h2 class="victoire">VICTOIRE!!!</h2>
+                </div>
+            </div>
+            <div class="messageNiveauJeu flexer">
+                <div class="rejouerMmNiveau">
+                    <div class="boutonMmNiveau">
+                        <h3 class="textMmNiv">REJOUER</h3>
+                    </div> 
+                </div>
+                <div class="niveauSuivant">
+                     <div class="boutonNiveauSuivant">
+                         <h3 class="textNivSuiv">NIVEAU SUIVANT</h3>
+                     </div> 
+                </div>
+            </div>
+        </div>
+
+        <div class="table" solution="" idpartie="" >
+            
+            <div class="bloc-reponse flexer">
+                <div class="boite-reponse">
+                    <div class="reponse">
+
+                    </div> 
+                
+                </div>
+                <div class="boite-bouton">
+                    <div class="bouton-soumettre">
+                        <h3 class="text"> SUBMIT </h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bloc-jeu">
+                <div class="ligne-jeu flexer">
+                    <div class="pions-joués flexer">
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                    </div>
+                    <div class="resultat flexer">
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                    </div>
+                </div>
+                <div class="ligne-jeu flexer">
+                    <div class="pions-joués flexer">
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                    </div>
+                    <div class="resultat flexer">
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                    </div>
+                </div>
+                <div class="ligne-jeu flexer">
+                    <div class="pions-joués flexer">
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                    </div>
+                    <div class="resultat flexer">
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                    </div>
+                </div>
+                <div class="ligne-jeu flexer">
+                    <div class="pions-joués flexer">
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                    </div>
+                    <div class="resultat flexer">
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                    </div>
+                </div>
+                <div class="ligne-jeu flexer">
+                    <div class="pions-joués flexer">
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                    </div>
+                    <div class="resultat flexer">
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                    </div>
+                </div>
+                <div class="ligne-jeu flexer">
+                    <div class="pions-joués flexer">
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                    </div>
+                    <div class="resultat flexer">
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                    </div>
+                </div>
+                <div class="ligne-jeu flexer">
+                    <div class="pions-joués flexer">
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                    </div>
+                    <div class="resultat flexer">
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                    </div>
+                </div>
+                <div class="ligne-jeu flexer">
+                    <div class="pions-joués flexer">
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                    </div>
+                    <div class="resultat flexer">
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                    </div>
+                </div>
+                <div class="ligne-jeu flexer">
+                    <div class="pions-joués flexer">
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                        <div class="un-pion-joué"></div>
+                    </div>
+                    <div class="resultat flexer">
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                        <div class="resultat-pion"></div>
+                    </div>
+                </div>
+                <div class="ligne-jeu flexer">
+                    <div class="pions-joués flexer">
+                        <div class="un-pion-joué active"></div>
+                        <div class="un-pion-joué active"></div>
+                        <div class="un-pion-joué active"></div>
+                        <div class="un-pion-joué active"></div>
+                    </div>
+                    <div class="resultat flexer">
+                        <div class="resultat-pion resActive"></div>
+                        <div class="resultat-pion resActive"></div>
+                        <div class="resultat-pion resActive"></div>
+                        <div class="resultat-pion resActive"></div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="bloc-selection flexer">
+                <div class="gros-rond-selecteur">
+                    <div class="petit-rond-selecteur rouge"></div>
+                </div>
+                <div class="gros-rond-selecteur">
+                    <div class="petit-rond-selecteur vert"></div>
+                </div>
+                <div class="gros-rond-selecteur">
+                    <div class="petit-rond-selecteur noir"></div>
+                </div>
+                <div class="gros-rond-selecteur">
+                    <div class="petit-rond-selecteur blanc"></div>
+                </div>
+                <div class="gros-rond-selecteur">
+                    <div class="petit-rond-selecteur jaune"></div>
+                </div>
+                <div class="gros-rond-selecteur">
+                    <div class="petit-rond-selecteur violet"></div>
+                </div>
+                <div class="gros-rond-selecteur">
+                    <div class="petit-rond-selecteur orange"></div>
+                </div>
+                <div class="gros-rond-selecteur">
+                    <div class="petit-rond-selecteur brun"></div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            //Cacher la page fin de jeu 
+            $(".fin").hide();
+            $(document).ready(function(){
+
+                //Cacher le bouton submit et attendre d'avoir les 4 cases remplies pour le montrer (géré dans la selection des couleurs)
+                $(".bouton-soumettre").hide();
+                
+                //Numérotation des couleur dans l'ordre
+                function numcouleur(couleur){
+                    if (couleur==='rgb(255, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box'){ return 0};
+                    if (couleur==='rgb(0, 128, 0) none repeat scroll 0% 0% / auto padding-box border-box'){ return 1};
+                    if (couleur==='rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box'){ return 2};
+                    if (couleur==='rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box'){ return 3};
+                    if (couleur==='rgb(255, 255, 0) none repeat scroll 0% 0% / auto padding-box border-box'){ return 4};
+                    if (couleur==='rgb(128, 0, 128) none repeat scroll 0% 0% / auto padding-box border-box'){ return 5};
+                    if (couleur==='rgb(255, 165, 0) none repeat scroll 0% 0% / auto padding-box border-box'){ return 6};
+                    if (couleur==='rgb(165, 42, 42) none repeat scroll 0% 0% / auto padding-box border-box'){ return 7};
+                }
+
+                //donner une coordonnée à chaque case de jeu 
+                let ligneTempo= $('.pions-joués');//selection de toutes les lignes
+                let lignes=[];
+                for (let i=9; i>=0; i--){
+                    lignes.push(ligneTempo[i]);//mettre dans lignes toutes les lignes en commençant par le plus en haut
+                };
+                for (let i=0; i<10; i++){
+                    let cases=lignes[i].getElementsByClassName("un-pion-joué");
+                    for (j=0; j<4; j++){
+                        $(cases[j]).attr("c", j);
+                        $(cases[j]).attr("l", i);
+                    }
+                }
+
+                //donner une coordonnée à chaque case résultat
+                let resultatTempo= $('.resultat');//selection de toutes les lignes de résultat
+                let lignerésultats=[];
+                for (let i=9; i>=0; i--){
+                    lignerésultats.push(resultatTempo[i]);
+                };
+                for (let i=0; i<10; i++){
+                    let casesresultats=lignerésultats[i].getElementsByClassName("resultat-pion");
+                    for (j=0; j<4; j++){
+                        $(casesresultats[j]).attr("l", i);
+                        $(casesresultats[j]).attr("c", j);
+                        
+                    }
+                }
+
+                //Gestion du lignemax et couleurmax en fonction du choix du niveau et les lignes et colonnes non concernées
+                let couleurs=$(".petit-rond-selecteur");
+                let cases=$(".un-pion-joué");
+                let casesresultats=$(".resultat-pion");
+
+                function ligneMaxPermi(niveauchoisi){
+                    if (niveauchoisi===1){return 10};
+                    if (niveauchoisi===2){return 8};
+                    if (niveauchoisi===3){return 6};
+                }
+                function coulMaxPermi(niveauchoisi){
+                    if (niveauchoisi===1){return 4};
+                    if (niveauchoisi===2){return 6};
+                    if (niveauchoisi===3){return 8};
+                }
+
+                //cacher les niveaux dont on apas encore droit d'accéder
+                nivmax=$(".niveaux").attr("niveauMaxpermi")
+                if (parseInt (nivmax)===98){//gestion des erreurs possibles
+                    $(".niveaux").hide;
+                    $(".fin").html('<h1>OUPS!! PSEUDO NON RECONNU</h1>')
+                    $('.fin').show();
+                }else{
+                    if (parseInt (nivmax)===99){
+                        $(".niveaux").hide;
+                        $(".fin").html('<h1>OUPS!! ERREUR SUR LES PARAMETRES</h1>')
+                        $('.fin').show();
+                    }
+                }
+                niveaux=$(".niveau")
+                for (let i=0; i<3; i++){
+                    if ($(niveaux[i]).attr("idniv")>nivmax){
+                        $(niveaux[i]).addClass("nivPasPermi")
+                    }
+                }
+
+                //Fonction pour cacher les lignes, case resultat et couleurs non concernés par le niveau
+                ligneMax=-1;
+                couleurmax=-1;
+                function cacherCasesCouleurs(){
+                    let niv=parseInt($(".niveaux").attr("nivchoisi"))
+                    ligneMax = ligneMaxPermi(niv);
+                    couleurmax = coulMaxPermi(niv);
+                    $(".niveaux").hide();
+                    for (let i=0; i<8; i++){//cacher les couleurs au numero superieur au num couleur max
+                        couleur=$(couleurs[i]).css('background');
+                        numcoul=numcouleur(couleur);
+                        if (numcoul>=couleurmax){
+                            $($(couleurs[i]).parent()).hide();
+                        }
+                    }
+                    for (let i=0; i<40; i++){//cacher les cases de lignes au numero superieur au num ligne max
+                        ligne=$(casesresultats[i]).attr("l");
+                        if (ligne>=ligneMax){
+                            $(casesresultats[i]).hide();
+                        }
+                    }
+                    for (let i=0; i<40; i++){//cacher les cases resulats de lignes au numero superieur au num ligne max
+                        ligne=$(cases[i]).attr("l");
+                        if (ligne>=ligneMax){
+                            $(cases[i]).hide();
+                        }
+                    }
+                }
+
+                //Aller insérer la partie dans la base et recevoir la solution
+                function generationSolution(){
+                    $.get('/jeu/solution?pseudo='+$(".identifiant").attr("pseudo")+'&niveau='+$(".niveaux").attr("nivchoisi"), // L'url côté serveur.
+                        miseàJourSolution, // fonction à appliquer sur les données reçues.
+                        'text' // Format des données reçues.
+                    );
+                    function miseàJourSolution(text){
+                        // Du code pour gérer le retour de l'appel AJAX.
+                        if (text==='-4'){
+                            $(".fin").html('<h1> PLUS DE 5 PARTIES PERDUES EN 1H</h1>')
+                            $(".fin").append('<h1> VOUS POURREZ REJOUER DANS 4H</h1>')
+                            $('.fin').show();
+                        }else{
+                            if (text==='-5'){
+                                $(".fin").html('<h2>NIVEAU INACCESSIBLE</h2>')
+                                $(".fin").append('<h2>VEUILLEZ RAFFRAICHIR LA PAGE</h2>')
+                                $(".fin").show();
+                            }else{
+                                if(text==="-99"){
+                                    $(".fin").html('<h2>OUPS!!! ERREUR INTERNE</h2>')
+                                    $(".fin").append('<h2>VEUILLEZ RAFRAICHIR LA PAGE</h2>')
+                                    $('.fin').show();
+                                }else{
+                                    $(".table").attr("solution", text[0]+text[1] +text[2] +text[3]) //les 4 1ers chiffres sont la solution 
+                                    idp=""
+                                    for (i=4;i<text.length; i++){//le reste id partie
+                                        idp=idp.concat(text[i])
+                                    }
+                                    $(".table").attr("idpartie", idp)
+                                }
+                            }
+                        }
+                        
+                    }    
+                }
+
+               //gestion onclick niveau
+                $(".niveau").click(function () {
+                    $(".niveaux").attr("nivchoisi", $(this).attr("idniv"))
+                    generationSolution(); //generer la solution et inserer la partie dans la bd
+                    cacherCasesCouleurs(); //cacher les cases non pertinents
+                })
+
+                
+                //Mettre le gros rond à la mm couleur que le petit et selectionner la couleur
+                let couleurselectionné='';
+                backgroundNormal='rgba(0, 0, 0, 0) linear-gradient(rgb(0, 0, 102), rgb(0, 0, 255)) repeat scroll 0% 0% / auto padding-box border-box'
+                $('.petit-rond-selecteur').click(function(){
+                    $('.gros-rond-selecteur').css('background', 'blue')//mettre tous les gros rond en bleu d'abord
+                    let grosRondCorrespondant= ($(this).parent())[0];
+                    let couleur=$(this).css('background');//selectionner la couleur du petit rond
+                    couleurselectionné=couleur;
+                    $(grosRondCorrespondant).css('background', couleurselectionné);//mettre le gros rond concerné à la couleur du petit rond
+                });
+
+                //Cacher le bouton submit et attendre d'avoir les 4 cases remplies pour le montrer (géré dans la selection des couleurs)
+                $(".bouton-soumettre").hide();
+
+                //Selections de couleurs pour les cases active seulement
+                $(".un-pion-joué").click(function(){ 
+                    if($(this).hasClass("active")){
+                        let num = parseInt($(this).css('border'));//le nombre de px du border
+                        if (couleurselectionné===''){//si aucun couleur n'est selectionné mettre le border à 1px(si c'etait rempli sinon rien ne change) et la couleur normal pour la case
+                            if (num===2){
+                                $(this).css('background', backgroundNormal) ;
+                                $(this).css('border', '1px solid white') ;
+                            }
+                        }else{//si une couleur est selectionnée la mettre dans la case et le border à 2px, et remettre les gros selecteur à bleu pour un autre choix de couleur
+                            $(this).css('background', couleurselectionné) ;
+                            $(this).css('border', '2px solid white') ;
+                            //Mise à jour tableauReponse
+                            let col=parseInt($(this).attr('c'));
+                            let lign=parseInt($(this).attr('l'));
+                            miseaJourTabRep(couleurselectionné, lign, col);
+                            couleurselectionné='';
+                            $('.gros-rond-selecteur').css('background', 'blue')
+                        };
+                        //Vérifier si 4 case active sont rempli pour montrer le bouton submit
+                        let caseActive= $('.active');
+                        let nbrCasesRemplies=0;
+                        for (j=0; j<4; j++){
+                            if ($(caseActive[j]).css('background')!=backgroundNormal){
+                                nbrCasesRemplies++;
+                            }
+                        }
+                        if (nbrCasesRemplies===4){
+                            $(".bouton-soumettre").show();//montrer le bouton submit si 4 cases remplies
+                        }else{
+                            $(".bouton-soumettre").hide();//le cacher si par exemple on rempli 4 cases et on en enleve un
+                        }
+                        
+                    }
+                    
+                });
+                
+                    // Gestion ligne active
+
+                //Obtenir les couleurs données en réponses sous forme de liste
+                let tableauRéponse=[[-1, -1, -1 ,-1],
+                                    [-1, -1, -1 ,-1],
+                                    [-1, -1, -1 ,-1],
+                                    [-1, -1, -1 ,-1],
+                                    [-1, -1, -1 ,-1],
+                                    [-1, -1, -1 ,-1],
+                                    [-1, -1, -1 ,-1],
+                                    [-1, -1, -1 ,-1],
+                                    [-1, -1, -1 ,-1],
+                                    [-1, -1, -1 ,-1]];
+                let tabsauvegarde=""//pour la sauvegarde dans la bd
+                
+                function miseaJourTabRep( couleur, ligne, colonne){
+                    tableauRéponse[ligne][colonne]=numcouleur(couleur)
+                };
+
+                //une fois qu'on clique sur submit, pour verifier si solution trouvé sinon mettre la ligne active à la ligne suivante ainsi que les cases résultats
+                let numligneActive=0;
+                
+                //fonction reinitialisation du tableau et generation d'une nouvelle solution pour une nouvelle partie
+                function newPartie(){
+                    $(".boutonNiveauSuivant").show();//pour le remettre en cas d'une defaite
+                    $(".fin").hide(); 
+                    //mettre les cases à la couleur de depart
+                    for (i=0; i<40; i++){//enlever le fait de les cacher et mettre background normal pour les cases jeu
+                        $(cases[i]).show()
+                        $(cases[i]).css('background','linear-gradient(#000066, blue)' )
+                        $(cases[i]).css('border','1px solid white')
+                    }
+                    for (i=0; i<40; i++){//enlever le fait de les cacher et mettre background normal pour les cases resultat
+                        $(casesresultats[i]).show();
+                        $(casesresultats[i]).css('background','linear-gradient(blue, #000066)' )
+                    }
+
+                    //Ne plus cacher une couleur et attendre le niveau choisi
+                    for (i=0; i<8; i++){
+                        $($(couleurs[i]).parent()).show();
+                    }
+
+                    //Remettre ligne active à 0 et mettre les cases correspondantes à active
+                    numligneActive=0
+                    for (i=0;  i<40; i++){//mettre les cases de la ligne suivante à active
+                        if (parseInt( $(cases[i]).attr('l'))===numligneActive){
+                            $(cases[i]).addClass("active");
+                        };
+                    };
+                    for (i=0;  i<40; i++){//mettre les cases de la ligne suivante à active
+                        if (parseInt( $(casesresultats[i]).attr('l'))===numligneActive){
+                            $(casesresultats[i]).addClass("resActive");
+                        };
+                    };
+
+                    //Gestion du nouveau tableau et de la solution
+                    cacherCasesCouleurs()
+                    generationSolution();
+
+                    //Gestion du tableau des reponses
+                    tableauRéponse=[[-1, -1, -1 ,-1],
+                            [-1, -1, -1 ,-1],
+                            [-1, -1, -1 ,-1],
+                            [-1, -1, -1 ,-1],
+                            [-1, -1, -1 ,-1],
+                            [-1, -1, -1 ,-1],
+                            [-1, -1, -1 ,-1],
+                            [-1, -1, -1 ,-1],
+                            [-1, -1, -1 ,-1],
+                            [-1, -1, -1 ,-1]];
+                    tabsauvegarde=""
+
+                    //Revenir à la normal pour les textes affichés en fin de partie, sinon l'ancien score s'affichera
+                    $(".textfin").html('<h2 class="defaite">VOUS AVEZ PERDU!!!</h2>')
+                    $(".textfin").append('<h2 class="victoire">VICTOIRE!!!</h2>')
+                }
+
+                function finPartie(gagne, score){
+                    //fin partie, insérer les données dans la base et mettre à jour le niveau permi
+                    $.post('/jeu/finpartie?pseudo='+$(".identifiant").attr("pseudo")+'&idp='+
+                        $(".table").attr("idpartie")+'&gagne='+gagne+'&score='+score+
+                        '&niveau='+$(".niveaux").attr("nivchoisi"),{tabl:tabsauvegarde}, miseàJourNiveauPermi)
+                    function miseàJourNiveauPermi(niv){
+                        if (niv==='-99'){
+                            $(".fin").html('<h2>ERREUR SUR LES PARAMETRES DE LA PARTIE</h2>')
+                            $(".fin").append('<h2>VEUILLEZ RAFRAICHIR LA PAGE</h2>')
+                            $('.fin').show();
+                        }else{
+                            $(".niveaux").attr("niveauMaxpermi", parseInt(niv))
+                        }
+                        
+                    }
+                }
+                
+                //Cacher niveau suivant si on a reussi le niveau 3 (c'est le niveau max)
+                function choixParti(gagne){
+                    if (gagne===1){
+                        //Cacher bouton niveau suivant si on a atteint le max 
+                        nivactuel=$('.niveaux').attr("nivchoisi")
+                        if (parseInt(nivactuel)===3){
+                            $(".boutonNiveauSuivant").hide();
+                        }
+                    }else{
+                        $(".boutonNiveauSuivant").hide();
+                    }
+                }
+                //Gestion des bouton niveau suivant et rejouer
+                $(".boutonNiveauSuivant").click(function () {
+                    //Gestion du niveau et de la nouvelle solution
+                    nivactuel=$('.niveaux').attr("nivchoisi")
+                    $(".niveaux").attr("nivchoisi", parseInt(nivactuel)+1)//si pas encore à niveau 3 on evolue d'un niveau
+                    //Commencer une nouvelle partie avec un niveau supérieur eventuellement
+                    newPartie() 
+                })
+                $(".boutonMmNiveau").click(function () {
+                    //Commencer une nouvelle partie avec le mm niveau
+                    newPartie()
+                })
+
+                $(".bouton-soumettre").click(function(){
+                    $(".bouton-soumettre").hide(); //cacher de nouveau le bouton pour ne pas cliquer deux fois dessus et sauter une ligne  
+                    //Vérification des pions trouvés
+                    let pionstrouvés=0;
+                    let pionsTrouvéPasBonnePlace=0;
+                    $(".active").removeClass("active");//enlever l'active partout dans les cases
+                    solution=$(".table").attr("solution")
+                    console.log(solution)
+                    sol=[]
+                    for (i=0; i<4; i++){
+                        sol.push(parseInt(solution[i]))
+                    };
+                    coups=tableauRéponse[numligneActive];
+                    sauvegardecoup=" "//pour la sauvegarde dans la base
+                    for (i=0; i<4; i++){
+                        sauvegardecoup=sauvegardecoup.concat(coups[i]) 
+                    }
+                    tabsauvegarde=tabsauvegarde.concat(sauvegardecoup)
+                        //on parcourt le tableau des coups et pour chacun on verifie s'il est bon et à la bonne place
+                        // si c'est le cas on supprime les correspondance pour ne pas par exemple avoir une couleur verte dans
+                        //la solution qui correspond à un coup vert bien placé, mais s'il y a un autre vert dans les coups
+                        //(donc deux vert) et qu'on avait pas supprimé le vert dans la solution, si on vérifie s'il y a un vert
+                        // dans la solution ce sera oui, ce qui est faux vu que ce vert est déjà pris en compte
+                    for (i=0; i<4; i++){
+                        if(sol[i]===coups[i]){
+                            pionstrouvés++;
+                            delete coups[i]
+                            delete sol[i]
+                        }else{
+                            if (sol.indexOf(coups[i]) !== -1){
+                                pionsTrouvéPasBonnePlace++;
+                                indSol=[]
+                                indSol.push(sol.indexOf(coups[i]));
+                                delete coups[i];
+                                delete sol[indSol[0]];
+                            }
+                        }
+                    }
+                    if (pionstrouvés===4){//victoire
+                        $(".fin").show();
+                        $(".defaite").hide();
+                        $(".resActive").removeClass('resActive');
+                        // calcul du score: 100 si on trouve du 1er coup, et on diminue proportionnellement au nombre de ligne 
+                        function calculScore(derniereLigne){
+                            return 100-derniereLigne*(100/ligneMax)
+                        }
+                        let score=parseInt (calculScore(numligneActive))
+
+                        //Ajouter l'affichage du score dans l'interface fin
+                        $(".textfin").append('<h2>SCORE: '+score+'</h2>' )
+                        
+                        //Sauvegarder les coups et le resultat dans la base et eventuellement mettre a jour niveau permi
+                        finPartie(1, score);
+
+                        //Choix partie
+                        choixParti(1)
+                    }else{
+                        casesRésultatActives= $(".resActive")
+                        for (i=0; i<pionstrouvés; i++){//mettre en blanc un nombre de case resulat égal au pions trouvés 
+                            $(casesRésultatActives[i]).css('background', 'white');
+                        }
+                        if (pionsTrouvéPasBonnePlace!=0){
+                            for (i=pionstrouvés; i<pionstrouvés+pionsTrouvéPasBonnePlace; i++){//mettre en noir un nombre de case resulat égal au pions trouvés mais pas à la bonne place
+                                $(casesRésultatActives[i]).css('background', 'black');
+                            }
+                        }
+                        $(casesRésultatActives).removeClass('resActive');
+                        numligneActive++;//mise à jour numéro ligne  active
+                        if (ligneMax<=numligneActive){//defaite
+                            $(".fin").show();
+                            $(".victoire").hide();
+                            $(".resActive").removeClass('resActive');
+
+                            //Sauvegarder les coups et le resultat dans la base et eventuellement mettre a jour niveau permi
+                            finPartie(0, 0);
+                            
+                            //Choix partie
+                            choixParti(0)
+                        }else{//sinon le jeu continue
+                            for (i=0;  i<40; i++){//mettre les cases de la ligne suivante à active
+                                if (parseInt( $(cases[i]).attr('l'))===numligneActive){
+                                    $(cases[i]).addClass("active");
+                                };
+                            };
+                            for (i=0;  i<40; i++){//mettre au niveau suivant les cases résultats actives
+                                if (parseInt( $(casesresultats[i]).attr('l'))===numligneActive){
+                                    $(casesresultats[i]).addClass("resActive");
+                                };
+                            };
+                        }
+                    }
+                });
+            });
+
+        </script> 
+        
+    </body>
+</html>

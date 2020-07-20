@@ -1,0 +1,49 @@
+<html>
+  <body>
+
+
+
+    <form action="/inscrit" method="post">
+      <!-- form pour dire qu'on fait un formulaire -->
+      <!-- post pour ne pas que les valeurs entrent dans l'url-->
+
+        <label for="login" >Choisissez un login : </label>
+        <!--for du label a la mm valeur que id de input -->
+        <input type="text" id="login" name="login_login" />
+
+        <label for="password" >Choisissez un mot de passe : </label>
+
+        <input type="password" id="password" name="login_password" />
+
+        <input type="submit" value = "Valider l'inscription"/ href = /loi >
+        <!-- on peut utiliser boutton au lieu de input si on veut associer bouton a une image ect -->
+        </form>
+        
+        <li><a href="/">Retourner à l'accueil de connexion.</a></li>
+
+        <script>
+
+        if ( {{ content }} > 0 ){
+
+          if( {{ content }} > 1 ){
+            
+            if( {{ content }} > 2 ){
+              
+              alert("Une erreur est survenue lors de l'inscription.")
+
+            }
+            else{
+              alert("Le mot de passe choisi est trop court.")
+            }
+
+          }
+          else{
+            alert("Ce pseudo est déjà pris.")
+          }
+          }
+        else {
+          alert("Votre compte a été crée avec succès.");
+        }
+        </script>
+  </body>
+</html>

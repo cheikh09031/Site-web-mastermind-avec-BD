@@ -1,0 +1,311 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgb(148, 148, 66), rgb(133, 45, 45));
+}
+
+.flexer{
+    display: flex;
+}
+
+.niveaux{
+    position: absolute;
+    left: 0;
+    top: 15vh;
+    width: 100%;
+    height: 92vh;
+    background-color:rgb(255,255,255,0.5);
+}
+
+.messageNiveau{
+    box-sizing: border-box;
+    width: 100%;
+    height: 20%;
+}
+
+.textmessniv{
+    box-sizing: border-box;
+    width: 70%;
+    height: 70%;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(0, 204, 255);
+}
+
+.choixNiv{
+    box-sizing: border-box;
+    width: 100%;
+    height: 30%;
+}
+
+.niveau{
+    box-sizing: border-box;
+    width: 33%;
+    height: 100%;
+}
+
+
+.textNiv{
+    box-sizing: border-box;
+    width: 40%;
+    height: 50%;
+    background-color:grey;
+    margin: auto;
+    text-align: center;
+    box-shadow: 2px 2px 4px black;
+    background: linear-gradient(rgb(126, 126, 100), rgb(226, 203, 203));
+}
+
+.textNiv:hover{
+    border: solid black;
+}
+
+.fin{
+    position: absolute;
+    left: 0;
+    top: 15vh;
+    width: 100%;
+    height: 92vh;
+    background-color:rgb(255,255,255,0.5);
+    text-align: center;
+}
+
+.messageFin{
+    box-sizing: border-box;
+    width: 100%;
+    height: 50%;
+}
+
+.textfin{
+    box-sizing: border-box;
+    width: 40%;
+    height: 50%;
+    margin: 10% auto;
+    text-align: center;
+}
+
+h2{
+    color: yellow;
+}
+
+.messageNiveauJeu{
+    box-sizing: border-box;
+    width: 80%;
+    height: 20%;
+    margin: auto;
+}
+
+.rejouerMmPartie{
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+}
+
+.boutonMmPartie{
+    box-sizing: border-box;
+    width: 40%;
+    height: 50%;
+    background-color:grey;
+    margin: auto;
+    text-align: center;
+    box-shadow: 2px 2px 4px black;
+    background: linear-gradient(rgb(126, 126, 100), rgb(226, 203, 203));
+
+}
+
+.boutonMmPartie:hover{
+    border: solid black;
+}
+
+.textMmPartie{
+    margin:0 auto;
+}
+
+.retourParties{
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+}
+
+.boutonMesParties{
+    box-sizing: border-box;
+    width: 40%;
+    height: 50%;
+    background-color:grey;
+    margin: auto;
+    text-align: center;
+    box-shadow: 2px 2px 4px black;
+    background: linear-gradient(rgb(126, 126, 100), rgb(226, 203, 203));
+}
+
+.boutonMesParties:hover{
+    border: solid black;
+}
+
+.textMesparties{
+    margin:0 auto;
+}
+
+.table{
+    background-color: blue;
+    width: 40%;
+    height: 90vh;
+    margin: 2vh auto;
+    background: linear-gradient(#0000ff, #0000cc);
+    box-shadow: 10px 10px 15px black;
+}
+
+
+.bloc-reponse{
+    box-sizing: border-box;
+    width: 100%;
+    height: 10%;
+    padding-top: 2%;
+}
+
+.boite-reponse{
+    box-sizing: border-box;
+    width: 70%;
+    height: 100%;
+}
+
+.reponse{
+    margin: 0 auto;
+    width: 70%;
+    height: 85%;
+    background: linear-gradient(#0000ff, #0000bb);
+    box-shadow: 2px 0px 4px white;
+}
+
+.boite-bouton{
+    width: 30%;
+    height: 100%;
+    border: 1px black;
+}
+
+.bouton-soumettre{
+    width: 80%;
+    height: 80%;
+    background-color:grey;
+    margin: auto;
+    text-align: center;
+    box-shadow: 2px 2px 4px white;
+    background: linear-gradient(rgb(126, 126, 100), rgb(226, 203, 203));
+}
+
+.bouton-soumettre:hover{
+    border: solid grey;
+}
+
+.text{
+    margin: 0;
+}
+
+.bloc-jeu{
+    box-sizing: border-box;
+    width: 100%;
+    height: 80%;
+}
+
+.ligne-jeu{
+    box-sizing: border-box;
+    width: 100%;
+    height: 10%;
+    padding-top: 8px;
+}
+
+.pions-joués{
+    width: 70%;
+    height: 100%;
+    padding: 0 8%;
+}
+
+.un-pion-joué{
+    box-sizing: border-box;
+    width: 25%;
+    height: 100%;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin-left: 3%;
+    background: linear-gradient(#000066, blue);
+}
+
+.resultat{
+    width: 30%;
+    height: 100%;
+    flex-wrap: wrap;
+    padding: 0 3%;
+}
+
+.resultat-pion{
+    box-sizing: border-box;
+    width: 40%;
+    height: 50%;
+    border: 1px solid #000066;
+    border-radius: 50%;
+    margin-left: 3%;
+    background: linear-gradient(blue, #000066);
+}
+
+.bloc-selection{
+    width: 100%;
+    height: 10%;
+}
+
+.gros-rond-selecteur{
+    box-sizing: border-box;
+    width: 12.5%;
+    height: 82%;
+    border-radius: 50%;
+    margin: 0 1px;
+    border: 1px solid black;
+}
+
+.gros-rond-selecteur:hover{
+    border: 1px solid white;
+}
+
+.petit-rond-selecteur{
+    box-sizing: border-box;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    margin: 12.5% auto;
+    border: 1px solid black;
+}
+
+.petit-rond-selecteur:hover{
+    border: 4px white;
+}
+
+.rouge{
+    background: red;
+}
+
+.vert{
+    background: green;
+}
+
+.brun{
+    background: brown;
+}
+
+.jaune{
+    background: yellow;
+}
+
+.noir{
+    background: black;
+}
+
+.orange{
+    background: orange ;
+}
+
+.blanc{
+    background: white ;
+}
+
+.violet{
+    background: purple ;
+}

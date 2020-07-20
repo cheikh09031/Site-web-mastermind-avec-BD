@@ -1,0 +1,17 @@
+{%extends 'layouts/default.html'%}
+
+{% block body %}
+<h1>Classement du Jour</h1>
+
+<section>
+    <table>
+    <tr>
+    <th class="haut">Pseudo</th>
+    <th class="haut">Niveau Difficulté</th>
+    <th class="haut">Score</th>
+    </tr>
+{{ content }}
+    </table>
+</section>
+
+{% endblock %}
